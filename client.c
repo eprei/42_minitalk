@@ -12,14 +12,10 @@ int ft_atoi_simplified(const char *str)
 
 char    *ft_convert_char_to_bits(char c)
 {
-    char *bits;
+    static char bits[8] = {0,0,0,0,0,0,0,0};
     int i;
 
-    i = 8;
-    bits = malloc(9 * sizeof(char));
-    if (bits == NULL)
-        return (NULL);
-    bits[i--] = '\0';
+    i = 7;
     while (i + 1 > 0)
     {
         if (c % 2 == 1)
@@ -43,10 +39,9 @@ void ft_send_bit(char *bits, int pid)
         else
             kill(pid, SIGUSR2);
         i++;
-        usleep(50);
+        usleep(30);
     }
-    free(bits);
-    bits = NULL;
+	usleep(100);
 }
 
 int main(int argc, char **argv)

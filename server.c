@@ -23,19 +23,14 @@ int	ft_putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int	ft_putnbr(unsigned int i, int base)
+void	ft_putnbr(unsigned int i, int base)
 {
 	char	*base_set;
-	int		count;
-	int		n;
 
-	base_set = "0123456789abcdef";
-	count = 0;
+	base_set = "0123456789";
 	if (i / base > 0)
-		count += ft_putnbr(i / base, base);
-	n = i % base;
-	count += ft_putchar(base_set[n]);
-	return (count);
+		ft_putnbr(i / base, base);
+	ft_putchar(base_set[i % base]);
 }
 
 void ft_read_binary(int sig)
@@ -62,10 +57,9 @@ int main(void)
     write(1, "Server PID: ", 13);
     ft_putnbr(getpid(), 10);
     write(1, "\n", 1);
+	signal(SIGUSR1, ft_read_binary);
+	signal(SIGUSR2, ft_read_binary);
 	while (1)
-	{
-		signal(SIGUSR1, ft_read_binary);
-		signal(SIGUSR2, ft_read_binary);
-	}
+		pause();
     return (0);
 }
