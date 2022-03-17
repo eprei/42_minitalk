@@ -39,9 +39,8 @@ void ft_send_bit(char *bits, int pid)
         else
             kill(pid, SIGUSR2);
         i++;
-        usleep(30);
+		usleep(50);
     }
-	usleep(100);
 }
 
 int main(int argc, char **argv)
@@ -60,6 +59,7 @@ int main(int argc, char **argv)
         {
             bits = ft_convert_char_to_bits(argv[2][i++]);
             ft_send_bit(bits, pid);
+			usleep(80);
         }
     }
 	return (0);
