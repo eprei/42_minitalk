@@ -40,27 +40,21 @@ int	ft_putnbr(unsigned int i, int base)
 
 void ft_read_binary(int sig)
 {
-	static char *bits = NULL;
-	static int i = 0;
+    static char bits[8] = {0,0,0,0,0,0,0,0};
+    static int i = 0;
 
-	if (bits == NULL)
+    if (sig == 30)
+        bits[i++] = '1';
+    else
+        bits[i++] = '0';
+    if (i == 8)
 	{
-		bits = malloc(9 * sizeof(char));
-		bits[8] = '\0';
-	}
-	if (bits == NULL)
-		return;
-	if (sig == 30)
-		bits[i++] = '1';
-	else
-		bits[i++] = '0';
-	if (i == 8)
-	{
-		ft_print_bits(bits);
-		free(bits);
-		bits = NULL;
-		i = 0;
-	}
+        ft_print_bits(bits);
+        i = 0;
+        while (i < 8)
+          bits[i++] = 0;
+        i = 0;
+    }
 }
 
 int main(void)
