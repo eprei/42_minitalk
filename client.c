@@ -53,12 +53,13 @@ int main(int argc, char **argv)
 {
     int pid;
     char *bits;
+    int i;
 
-    if (argc == 3)
+	i = 0;
+    if (argc != 3)
+        write(1, "Correct use of the client program: ./client [server pid] [string to send]\n" , 74);
+    else
     {
-        int i;
-
-        i = 0;
     	pid = ft_atoi_simplified(argv[1]);
         while (argv[2][i] != '\0')
         {
