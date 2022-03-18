@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: epresa-c <marvin@42lausanne.ch>            +#+  +:+       +#+         #
+#    By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 10:54:54 by epresa-c          #+#    #+#              #
-#    Updated: 2022/03/18 10:54:58 by epresa-c         ###   ########.fr        #
+#    Updated: 2022/03/18 11:37:17 by epresa-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all server client clean fclean re
