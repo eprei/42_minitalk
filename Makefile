@@ -6,7 +6,7 @@
 #    By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 10:54:54 by epresa-c          #+#    #+#              #
-#    Updated: 2022/03/18 11:37:17 by epresa-c         ###   ########.fr        #
+#    Updated: 2022/03/21 16:22:37 by epresa-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all server client clean fclean re
+.PHONY: all clean fclean re
